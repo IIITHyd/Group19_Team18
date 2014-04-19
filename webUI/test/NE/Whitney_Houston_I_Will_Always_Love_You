@@ -1,0 +1,7 @@
+Whitney/B-person Houston/I-person #IWillAlwaysLoveYou/O
+I/O Will/O Always/O Love/O You/O /Whitney/B-geo-loc Houston/I-geo-loc
+i/O will/O always/O love/O you/O Whitney/B-person Houston/I-person
+Whitney/B-person Houston/I-person I/O will/O always/O love/O you/O
+i/O will/O always/O love/O you/O x/O whitney/B-person houston/I-person
+I/O will/O always/O love/O you/O !/O Whitney/B-person Houston/I-person !/O
+Average time per tweet = 5.77804156712s

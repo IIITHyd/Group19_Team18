@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Sub-Topic Clustering on Tweets and generating brief pseudo summaries per cluster related to particular Entity</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" media="screen,projection" type="text/css" href="css/main.css" />
+<link rel="stylesheet" media="screen,projection" type="text/css" href="css/skin.css" />
+<script type="text/javascript" src="javascript/cufon-yui.js"></script>
+<script type="text/javascript" src="javascript/font.font.js"></script>
+<script type="text/javascript">
+Cufon.replace('h1, h2, h3, h4, h5, h6, #logo', {
+    hover: true
+});
+</script>
+<script type="text/javascript">
+        var fsObj = null;
+        var foldedToList = 'D:\\Workstation\\Eclipse_Workspace\\cluster\\test\\NE';
+
+        function listFiles() {
+            try {
+                fsObj = new ActiveXObject('Scripting.FileSystemObject');
+            }
+            catch (err) { }
+
+            if (!fsObj) {
+                alert('You must allow the ActiveX object to run!');
+            } else {
+                if (!fsObj.FolderExists(foldedToList)) {
+                    alert('The folder:\n\n' + foldedToList + '\n\ndoes not exist!');
+                } else {
+
+                    // at this stage, we can list all files
+                    var folderObj = fsObj.GetFolder(foldedToList);
+                    var filesObj = new Enumerator(folderObj.files);
+                    filesStr = ';
+                    while (!filesObj.atEnd()) {
+                        var tempFile = filesObj.item();
+                        filesStr += '<a href="' + tempFile.Path + '">' + tempFile.Name + '</a><br>';
+                        filesObj.moveNext();
+                    }
+                    document.getElementById('fileList').innerHTML = filesStr;
+                }
+            }
+        }
+</script>
+</head>
+<body>
+<!-- START PAGE SOURCE -->
+<div id="main">
+  <div id="header" class="box">
+    <p id="logo">Sub-Topic Clustering on Tweets and generating brief pseudo summaries per cluster related to particular Entity</p>
+  </div>
+  <div id="nav" class="box">
+    <ul>
+      <li class="current"><a href="index.html">Home</a></li>
+    </ul>
+  </div>
+  <div id="section" class="box">
+    <div id="content">
+      <div id="topstory" class="box">
+        <h1><a href="http://nlp.uned.es/replab2013/" target="_blank">RepLab Tweet Clusters</a></h1>
+      </div>
+      <div class="padding">
+        <ul class="articles box">
+          <li class="box">
+		    <div id="content">
+			  <h3> Testing </h3> 
+			</div>
+            
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="aside">
+      <h3 class="title">Sponsors</h3>
+      <div class="padding">
+        <ul class="sponsors">
+          <li class="first"><a href="#">Lorem ipsum dolor</a><br />
+            Donec libero. Suspendisse bibendum</li>
+          <li><a href="#">Dui pede condimentum</a><br />
+            Phasellus suscipit, leo a pharetra</li>
+          <li><a href="#">Condimentum lorem</a><br />
+            Tellus eleifend magna eget</li>
+          <li class="last"><a href="#">Donec mattis</a><br />
+            purus nec placerat bibendum</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="footer" class="box">
+    <p class="f-right">Group 19, IIIT Hyderabad</p>
+    <!--<p class="f-left">Copyright &copy;&nbsp;2011 <a href="#">CodaPress</a></p>-->
+  </div>
+</div>
+<!-- END PAGE SOURCE -->
+<div align=center>By - Anil Kumar Sutrala, Dinesh Singla, Raghav K, Snigdha Verma</div></body>
+</html>

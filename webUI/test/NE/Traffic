@@ -1,0 +1,14 @@
+I/O 75/O Chrysler/O Frwy/O NORTHBOUND/O from/O I/O 696/O Reuther/O Frwy/O (#61/O )/O to/O M/B-other 59/I-other (#77/O )/O Jam/O Factor/O :/O 2/O Incidents/O :/O 0/O ()/O #Detroit/O #traffic/O
+I/O 75/O Chrysler/O Frwy/O NORTHBOUND/O from/O I/O 696/O Reuther/O Frwy/O (#61/O )/O to/O M/B-other 59/I-other (#77/O )/O Jam/B-other Factor/I-other :/O 1/O Incidents/O :/O 0/O ()/O #Detroit/O #traffic/O
+I/O 75/O Chrysler/O Frwy/O NORTHBOUND/O from/O I/O 696/O Reuther/O Frwy/O (#61/O )/O to/O M/B-person 59/I-person (#77/O )/O Jam/B-other Factor/I-other :/O 3/O Incidents/O :/O 1/O (/O Moderate/O )/O #Detroit/O #traffic/O
+I/O 75/O Chrysler/O Frwy/O NORTHBOUND/O from/O I/O 696/O Reuther/O Frwy/O (#61/O )/O to/O M/B-other 59/I-other (#77/O )/O Jam/B-person Factor/I-person :/O 4/O Incidents/O :/O 0/O ()/O #Detroit/O #traffic/O
+I/O 75/O Chrysler/O Frwy/O NORTHBOUND/O from/O I/O 696/O Reuther/O Frwy/O (#61/O )/O to/O M/B-person 59/I-person (#77/O )/O Jam/B-other Factor/I-other :/O 0/O Incidents/O :/O 0/O ()/O #Detroit/O #traffic/O
+DTN/O Autos/O :/O New/B-other Detroit/I-other Ontario/I-other span/O will/O ease/O bottlenecks/O ,/O lower/O costs/O at/O key/O border/O ,/O automakers/O say/O :/O Chrysler/B-company s/O .../O http://bit.ly/MFZjS2/O
+I/O 75/O Chrysler/O Frwy/O NORTHBOUND/O from/O I/O 696/O Reuther/O Frwy/O (#61/O )/O to/O M/B-other 59/I-other (#77/O )/O Jam/B-band Factor/I-band :/O 1/O Incidents/O :/O 1/O (/O Moderate/O )/O #Detroit/O #traffic/O
+I/O 75/O Chrysler/O Frwy/O NORTHBOUND/O from/O I/O 696/O Reuther/O Frwy/O (#61/O )/O to/O M/B-person 59/I-person (#77/O )/O Jam/B-other Factor/I-other :/O 1/O Incidents/O :/O 0/O ()/O #Detroit/O #traffic/O
+I/O 75/O Chrysler/O Frwy/O NORTHBOUND/O from/O I/O 696/O Reuther/O Frwy/O (#61/O )/O to/O M/B-band 59/I-band (#77/O )/O Jam/B-facility Factor/I-facility :/O 1/O Incidents/O :/O 0/O ()/O #Detroit/O #traffic/O
+I/O 75/O Chrysler/O Frwy/O NORTHBOUND/O from/O I/O 696/O Reuther/O Frwy/O (#61/O )/O to/O M/B-band 59/I-band (#77/O )/O Jam/B-other Factor/I-other :/O 1/O Incidents/O :/O 0/O ()/O #Detroit/O #traffic/O
+I/O 75/O Chrysler/O Frwy/O NORTHBOUND/O from/O I/O 696/O Reuther/O Frwy/O (#61/O )/O to/O M/B-product 59/I-product (#77/O )/O Jam/B-other Factor/I-other :/O 1/O Incidents/O :/O 0/O ()/O #Detroit/O #traffic/O
+I/O 75/O Chrysler/O Frwy/O NORTHBOUND/O from/O I/O 696/O Reuther/O Frwy/O (#61/O )/O to/O M/B-other 59/I-other (#77/O )/O Jam/B-tvshow Factor/I-tvshow :/O 1/O Incidents/O :/O 0/O ()/O #Detroit/O #traffic/O
+I/O 75/O Chrysler/O Frwy/O NORTHBOUND/O from/O I/O 696/O Reuther/O Frwy/O (#61/O )/O to/O M/B-product 59/I-product (#77/O )/O Jam/B-other Factor/I-other :/O 1/O Incidents/O :/O 0/O ()/O #Detroit/O #traffic/O
+Average time per tweet = 2.40879392624s

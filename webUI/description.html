@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Sub-Topic Clustering on Tweets and generating brief pseudo summaries per cluster related to particular Entity</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" media="screen,projection" type="text/css" href="css/main.css" />
+<link rel="stylesheet" media="screen,projection" type="text/css" href="css/skin.css" />
+<script type="text/javascript" src="javascript/cufon-yui.js"></script>
+<script type="text/javascript" src="javascript/font.font.js"></script>
+<script type="text/javascript">
+Cufon.replace('h1, h2, h3, h4, h5, h6, #logo', {
+    hover: true
+});
+</script>
+</head>
+<body>
+<!-- START PAGE SOURCE -->
+<div id="main">
+  <div id="header" class="box">
+    <p id="logo">Sub-Topic Clustering on Tweets and generating brief pseudo summaries per cluster related to particular Entity</p>
+  </div>
+  <div id="nav" class="box">
+    <ul>
+      <li class="current"><a href="index.php">Home</a></li>
+    </ul>
+    <ul>
+      <li class="current"><a href="description.html">Description</a></li>
+    </ul>
+    <ul>
+      <li class="current"><a href="index.php">Slides</a></li>
+    </ul>
+    <ul>
+      <li class="current"><a href="index.php">Video</a></li>
+    </ul>
+  </div>
+  <div id="section" class="box">
+    <div id="content">
+      <div id="topstory" class="box">
+        <h1><a href="http://nlp.uned.es/replab2013/" target="_blank">RepLab Tweet Clusters</a></h1>
+      </div>
+      <div class="padding">
+        <ul class="articles box">
+          <li class="box">
+		<div id="content">
+			  <h2> Introduction </h2> 
+			  <p> Summarizing twitter tweets can be viewed as an instance of the more general problem of automated text summarization, which is the problem of automatically generating a condensed  version of the most important content from one or more documents. A Twitter post or tweet is at most 140 characters long and in this study we only consider English posts. </p>
+			  <p> In this project we approach the problem of summarization 			  
+			  of tweets by first identifying the important entities from a 			  
+			  cluster of tweets, which are assumed to be clustered already 			  
+			  based on a topic. For each cluster we identify the most 			  
+			  important entities from each type like Geographic location, 			  
+			  Person etc using TF-IDF scores. Then we find most important 			  
+			  tweets using these important entities. Finally we generate a			  
+			  brief sudo summary for each cluster using the important 			  
+			  entities and important tweets.</p>
+
+
+			  <h2> Approach </h2>
+			  <h3> 1. Datasets </h3> 
+			  <p>We have used labeled tweets which are taken from 			  
+			  RepLab[1] data set as the source data for generating			  
+			  summaries. RepLab is a competitive evaluation exercise for 			  
+			  Online Reputation Management systems. In the dataset 			  
+			  provided we have the set of tweets with the tweet id, author, 			  
+			  entity id , text. We are also provided with a labeled dataset 			  
+			  which has the fields of tweet id, author, entity id, filtering, 			  
+			  polarity, topic, topic priority. 
+			  </p>
+
+			  <h3> 2. MVP Model </h3>
+			   <img src="images/Test.png" alt="Image not found" height="300" width="420"> 
+
+			  <h3> 3. Base Clusters Generation </h3>
+			  <p>
+			  Using labeled data we have generated Base tweet clusters, 
+			  for further processing, using the tweet topic name. 
+			  </p>
+
+			  <h3> 4. Named Entity Recognition </h3>
+			  <p>
+			  We have used Aritter[2] NLP tool for identifying named 
+			  entities, attributes and attribute relations. 
+			  For each cluster of tweets, we ran Aritter NER tool to 
+			  classify tweet entities and extracted all entities apart from type 
+			  “O”, as identified by Aritter tool, as important keywords and 
+			  generated TF-IDF counts for them. Also, while generating 
+			  summaries we have taken location (“geo-loc” named entity as per Aritter classification) as the most priority type among all 
+			  named entities. 
+			  </p>
+
+			  <h3> 5. Generate summary per cluster </h3>
+			  <p>
+			  Generate a map of named entity type vs named entities for 
+			  the list of all tweets and call this map as NETYPE_MAP which 
+			  looks like as given below.
+			  </p>
+			  <p>
+			  “geo-loc” =&gt &lt ne &gt, &lt ne &gt... <br>
+			  “person” =&gt &lt ne &gt,&lt ne &gt ...     <br>
+			  .... <br>
+			  </p>
+			  <p>
+			  Tweet summary can be of three types. Collect the named entities of max TF-IDF count. 
+			  <br>
+			  <b><i>Case I:</i></b> When the named entities with max TF-IDF’s all are of location type
+  			  Print the summary as the collection of tweet texts which contains the named entities with max TF-IDF counts of location type.
+			  <br>
+			  <b><i>Case II:</i></b> When no location type named entities has maximum TF-IDF and only first the max TF-IDF named entity type is” important”.A named entity type is marked as “important” only if its TF-IDF count is not less than half of the max TF-IDF count i.e. a named entity type with TF-IDF count as max2 is marked as important named entity type only if
+			  <br>
+			  2 * max2  ≥  max    
+			  <br>
+	             	  where max is the max TF-IDF count for an NE type in the cluster
+			  <br>
+			  <b><i>Case III:</i></b> When the max TF-IDF named entity types are of location and other types (Mixed case).This becomes a sub-case of case 2
+			  </p>
+
+			  <h2> Experiments and Results </h2>
+			  <p>
+			  	We have generated pseudo summaries for tweet clusters and will analyze the summaries with that of text rank tool.
+			  </p>
+			  <h2> References </h2>
+			  <p>1. RepLab Data set http://nlp.uned.es/replab2013 </p>
+			  <p>2. Twitter NLP tools (Aritter).</p>
+			  <p>3. Triplet Extraction From Sentences. Delia Rusu*, Lorand Dali*, Blaž Fortuna°, Marko Grobelnik°, Dunja Mladeni </p>
+			  <p>4. R. Mihalcea. Language independent extractive summarization.(TextRank) In Proceedings of the ACL 2005 on Interactive poster and demonstration sessions, pages 49–52. </p>
+			  <p>5. Micro opinion Generation: An unsupervised approach to generating ultra concise summaries of opinions.         (http://sifaka.cs.uiuc.edu/czhai/pub/www12-micropinion.pdf) </p>
+			  <p>6. Comparing Twitter Summarization Algorithms for Multiple Post Summaries (http://cs.uccs.edu/~jkalita/papers/2011/InouyeDavidSocialComm2011.pdf)</p>
+			  <p>7. Chakrabarti, D. , Punera, K, Event Summarization using Tweets , In Proc .ICWSM 2011. (http://www.aaai.org/ocs/index.php/ICWSM/ICWSM11/paper/viewFile/2885/3263) </p>
+			  <p>8. Summarizing Sporting Events Using Twitter. (http://www.jeffreynichols.com/papers/summary-iui2012.pdf )</p>
+		</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="aside">
+      <h3 class="title">References</h3>
+      <div class="padding">
+        <ul class="sponsors">
+          <li class="first" ><a href="https://github.com/aritter/twitter_nlp">Aritter Parser</a><br />
+            Git hub repo for Twitter aritter parser</li>
+          <li><a href="http://timeml.org/site/tarsqi/toolkit/index.html">Tarsqi Toolkit</a><br />
+            Time expression extractor tool kit</li>
+		  <li><a href="http://nlp.stanford.edu:8080/ner/">Stanford Named Entity Tagger</a><br />
+            Online tool for Stanford NER Tagger</li>
+          <li class="last"><a href="https://github.com/ceteri/textrank">Text Rank</a><br />
+            Text Rank implementation in java</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="footer" class="box">
+    <p class="f-right">Group 19, IIIT Hyderabad</p>
+    <!--<p class="f-left">Copyright &copy;&nbsp;2011 <a href="#">CodaPress</a></p>-->
+  </div>
+</div>
+<!-- END PAGE SOURCE -->
+<div align=center>By - Anil Kumar Sutrala, Dinesh Singla, Raghav K, Snigdha Verma</div></body>
+</html>
